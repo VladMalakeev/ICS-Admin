@@ -34,8 +34,9 @@ export const Content = styled.div`
 
 export const Information = styled.div`
     width:100%;
-    min-height:calc(100% - ${FooterHeight});
+    min-height:calc(100% - ${FooterHeight + HeaderHeight}px);
     background:#EAEFF3;
+    margin-top:${HeaderHeight}px;
 `;
 
 

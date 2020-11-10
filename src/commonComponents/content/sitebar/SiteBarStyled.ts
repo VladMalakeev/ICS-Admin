@@ -5,7 +5,8 @@ import {
     HeaderHeight,
     MobileCollapsedSiteBarWidth,
     MobileSiteBarWidth,
-    MobileSiteBarPadding
+    MobileSiteBarPadding,
+    MediaScreenSize
 } from "../../commonStyle";
 
 
@@ -16,15 +17,15 @@ export const SiteBarWrap = styled.div<any>`
     position:relative;
     padding: ${SiteBarPadding}px;
 
-    @media(max-width:1500px){
+    @media(max-width:${MediaScreenSize.WIDE}px){
         width:25%;
     }
 
-    @media(max-width:1200px){
+    @media(max-width:${MediaScreenSize.MEDIUM}px){
         width:30%;
     }
 
-    @media(max-width:900px){
+    @media(max-width:${MediaScreenSize.SMALL}px){
         padding:${MobileSiteBarPadding}px;
         position:fixed;
         width:${prop => prop.status ? MobileSiteBarWidth : MobileCollapsedSiteBarWidth}px;
@@ -42,7 +43,7 @@ export const SiteBarComponentsWrap = styled.div`
     top: ${HeaderHeight+SiteBarPadding}px;
     overflow:auto;
 
-    @media(max-width:900px){
+    @media(max-width:${MediaScreenSize.SMALL}px){
         height:calc(100vh - ${HeaderHeight + MobileSiteBarPadding + MobileSiteBarPadding}px);
         top: ${HeaderHeight+MobileSiteBarPadding}px;
     }
@@ -56,22 +57,32 @@ export const SiteBarMenuComponent = styled.div`
     margin-bottom:${SiteBarPadding}px;
 `;
 
-export const SiteBarMenu = styled.div`
-    margin:10px;
+
+export const SiteBarMenu = styled(NavLink)`
+    margin:5px 0;
     display:flex;
     align-items:center;
+    height:25px;
+    svg{
+        font-size:25px;
+    }
 `;
 
-export const SiteBarMenuLink = styled(NavLink)`
+export const SiteBarMenuIcon = styled.div`
+    margin:0 3px;
+    display:flex;
+`;
+
+export const SiteBarMenuLink = styled.span`
     font-size:20px;
-    margin-left:5px;
+    margin-left:10px;
 `;
 
 export const SiteBarBurgerButton = styled.span`
     margin:5px 7px;
     display:none;
 
-    @media(max-width:900px){
+    @media(max-width:${MediaScreenSize.SMALL}px){
         display:block;
     }
 `;

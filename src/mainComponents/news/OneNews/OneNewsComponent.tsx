@@ -1,7 +1,7 @@
-import React from "react";
+import React, {FC} from "react";
 
-export const OneNewsComponent = () => {
+export const OneNewsComponent:FC<any> = (props) => {
     return (
-        <div></div>
+        <div>Single news</div>
     )
 }

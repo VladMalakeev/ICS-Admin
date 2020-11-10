@@ -2,6 +2,6 @@ import React from "react";
 
 export const NewsListComponent = () => {
     return (
-        <div></div>
+        <div>News list</div>
     )
 }
